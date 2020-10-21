@@ -134,11 +134,6 @@ class Home extends Component {
                               <span style={{ float: "right" }}>89</span>
                             </div>
                             <div className="d-flex flex-wrap flex-row justify-content-center align-items-center ptb-5">
-                              <div className="dc-input">
-                                <input type="text" className="form-control search" name="search" id='searchitem' placeholder="Type to search nutrition present" autoComplete="off"
-                                  onChange={(e) => this.setState({ Search: e.target.value })} />
-                                <img src={require("../img/searchicon.png")} className="search-img" />
-                              </div>
                             </div>
                             <br />
                           </div>
@@ -170,12 +165,12 @@ class Home extends Component {
 
                                     <table cellpadding="0" cellspacing="0" className="list-data">
 
-                                      <tr onClick={() => this.bindGraph(item.strItemName)} className={key === this.state.mfSchemes.length - 1 ? 'removeBorder' : null}>
+                                      <tr className={key === this.state.mfSchemes.length - 1 ? 'removeBorder' : null}>
                                         <span className="bold-font">{item.strItemName}</span>
                                         <span style={{ paddingLeft: 10 }}>{item.stritemdesc}</span>
                                         <span className="bold-font" style={{ float: "right" }}>{item.strItemPrc}</span>
                                         {item.subItem && item.subItem.length && item.subItem.map((subitem) => (
-                                          <tr onClick={() => this.bindGraph(subitem.strItemName)}>
+                                          <tr>
                                             <span style={{ paddingLeft: 10 }}>{subitem.strItemName}</span>
                                             <span style={{ paddingLeft: 10 }}>{subitem.stritemdesc}</span>
                                             <span className="bold-font" style={{ float: "right" }}>{subitem.strItemPrc}</span>
@@ -203,7 +198,7 @@ class Home extends Component {
 
                                     <table cellpadding="0" cellspacing="0" className="list-data">
 
-                                      <tr onClick={() => this.bindGraph(item.strItemName)} className={key === this.state.mfSchemes.length - 1 ? 'removeBorder' : null}>
+                                      <tr className={key === this.state.mfSchemes.length - 1 ? 'removeBorder' : null}>
                                         <span>{item.strItemName}</span>
                                         <span style={{ paddingLeft: 10 }}>{item.stritemdesc}</span>
                                         <span style={{ float: "right" }}>{item.strItemPrc}</span>
